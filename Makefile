@@ -5,7 +5,7 @@
 ## Login   <bougon_p@epitech.net>
 ## 
 ## Started on  Thu Oct 29 14:45:48 2015 Pierre Bougon
-## Last update Fri Dec 11 13:58:10 2015 marc brout
+## Last update Mon Dec 14 21:35:38 2015 marc brout
 ##
 
 SRCP	= ./src/
@@ -13,9 +13,20 @@ SRCP	= ./src/
 SRCP2	= ./tcore/
 
 SRC     = $(SRCP)fdf2.c \
+	$(SRCP)free_all.c \
+	$(SRCP)fill_obj.c \
+	$(SRCP)aff_fdf.c \
+	$(SRCP)pos_pixels.c \
+	$(SRCP)filling_process.c \
+	$(SRCP)check_scope.c \
+	$(SRCP)my_strdup.c \
+	$(SRCP)my_strcmp.c \
+	$(SRCP)my_getnbr.c \
+	$(SRCP)my_strlen.c \
+	$(SRCP)my_putstr_err.c \
 	$(SRCP2)tekpixel.c \
 	$(SRCP2)tekline.c \
-	$(SRCP2)tekllproject.c
+	$(SRCP2)tekisoproject.c
 
 OBJS    = $(SRC:.c=.o)
 
@@ -23,7 +34,7 @@ NAME    = fdf2
 
 CC      = gcc
 
-CFLAGS  = -W -Wall -Werror -ansi -pedantic -g
+CFLAGS  = -W -Wall -Werror -ansi -pedantic -g -I./include/
 
 LDFLAGS = -L/usr/local/lib \
 	-llapin \
@@ -38,7 +49,7 @@ LDFLAGS = -L/usr/local/lib \
 RM      = rm -f
 
 .c.o:
-	$(CC) -c $< -o $@ $(CFLAGS) 
+	@$(CC) -c $< -o $@ $(CFLAGS)
 
 $(NAME): $(OBJS)
 	@$(CC) -o $(NAME) $(OBJS) $(LDFLAGS)

@@ -5,10 +5,10 @@
 ** Login   <brout_m@epitech.net>
 ** 
 ** Started on  Tue Nov 17 16:29:29 2015 marc brout
-** Last update Fri Dec  4 20:50:52 2015 marc brout
+** Last update Mon Dec 14 10:20:21 2015 marc brout
 */
 
-#include "../include/fdf.h"
+#include "fdf.h"
 
 void	tekline(t_bunny_pixelarray *pix,
 		t_bunny_position *pos,
