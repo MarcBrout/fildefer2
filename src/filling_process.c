@@ -5,7 +5,7 @@
 ** Login   <brout_m@epitech.net>
 ** 
 ** Started on  Mon Dec 14 17:45:03 2015 marc brout
-** Last update Mon Dec 14 17:53:26 2015 marc brout
+** Last update Tue Dec 15 19:39:52 2015 marc brout
 */
 
 #include "fdf.h"
@@ -29,8 +29,8 @@ char		fill_lines(t_param *arg, t_form *scp)
 {
   int		i;
 
-  i = -6;
-  while (((i += 6) >= 0) && check_trio(arg, scp, i) &&
+  i = -3;
+  while (((i += 3) >= 0) && check_trio(arg, scp, i) &&
 	 check_trio(arg, scp, i + 3))
     {
       if (add_obj_to_list(scp))
