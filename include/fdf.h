@@ -5,7 +5,7 @@
 ** Login   <brout_m@epitech.net>
 ** 
 ** Started on  Fri Dec 11 13:21:09 2015 marc brout
-** Last update Tue Dec 15 17:10:01 2015 marc brout
+** Last update Tue Dec 15 19:13:07 2015 marc brout
 */
 
 #ifndef FDF_H_
@@ -24,8 +24,6 @@
 # define DEFAULT_COL RED
 # define PAS 100
 
-# include "stdio.h"
-# include "unistd.h"
 # include "lapin.h"
 
 typedef struct		s_dot
