@@ -5,7 +5,7 @@
 ** Login   <brout_m@epitech.net>
 ** 
 ** Started on  Fri Dec 11 13:44:58 2015 marc brout
-** Last update Tue Dec 15 16:38:40 2015 marc brout
+** Last update Tue Dec 15 17:36:06 2015 marc brout
 */
 
 #include "fdf.h"
@@ -35,7 +35,6 @@ char		const_form_list(t_param *arg)
   char		*name;
 
   i = -1;
-  arg->form = NULL;
   while ((name = (char *)FLD(arg->ini, NULL, "objlist", ++i)) != NULL)
     if (add_form_to_list(arg, name))
       return (1);
@@ -60,26 +59,29 @@ char		launch_fdf(char **av)
 {
   t_param	arg;
 
-  if (open_ini(&arg, av))
-    return (1);
-  if (const_form_list(&arg))
-    return (1);
-  if (fill_objs(&arg))
-    return (1);
+  arg.form = NULL;
+  if (av[1] != NULL)
+    {
+      if (open_ini(&arg, av))
+	return (1);
+      if (const_form_list(&arg))
+	return (1);
+      if (fill_objs(&arg))
+	return (1);
+    }
   if (generate_cube(&arg))
     return (1);
   if (aff_fdf(&arg))
     return (1);
   free_all(&arg);
-  bunny_delete_ini(arg.ini);
+  if (av[1] != NULL)
+    bunny_delete_ini(arg.ini);
   return (0);
 }
 
 int		main(int ac, char **av, char **ev)
 {
-  if (ac > 2)
-    return (1);
-  if (ev[0] == NULL)
+  if (ev[0] == NULL || ac < 0)
     return (1);
   if (launch_fdf(av))
     return (1);
