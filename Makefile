@@ -5,7 +5,7 @@
 ## Login   <bougon_p@epitech.net>
 ## 
 ## Started on  Thu Oct 29 14:45:48 2015 Pierre Bougon
-## Last update Mon Dec 14 21:35:38 2015 marc brout
+## Last update Tue Dec 15 16:33:27 2015 marc brout
 ##
 
 SRCP	= ./src/
@@ -14,6 +14,8 @@ SRCP2	= ./tcore/
 
 SRC     = $(SRCP)fdf2.c \
 	$(SRCP)free_all.c \
+	$(SRCP)cube.c \
+	$(SRCP)cube_vertices.c \
 	$(SRCP)fill_obj.c \
 	$(SRCP)aff_fdf.c \
 	$(SRCP)pos_pixels.c \

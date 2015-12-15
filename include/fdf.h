@@ -5,7 +5,7 @@
 ** Login   <brout_m@epitech.net>
 ** 
 ** Started on  Fri Dec 11 13:21:09 2015 marc brout
-** Last update Mon Dec 14 22:10:38 2015 marc brout
+** Last update Tue Dec 15 17:10:01 2015 marc brout
 */
 
 #ifndef FDF_H_
@@ -21,6 +21,8 @@
 # define POLY "polygone"
 # define FLD bunny_ini_get_field
 # define BACKGROUND BLACK
+# define DEFAULT_COL RED
+# define PAS 100
 
 # include "stdio.h"
 # include "unistd.h"
@@ -74,6 +76,12 @@ void tekline(t_bunny_pixelarray *, t_bunny_position *, t_color *);
 void put_data(t_param *, t_form *, t_bunny_position *, int);
 void put_color(t_param *, t_form *, t_color *, int);
 void tekisoproject(t_bunny_position *, int, int, int);
+void trace_cube(t_param *);
+void add_dota(t_obj *, int, int, int);
+void add_dotb(t_obj *, int, int, int);
+void facea(t_obj *, int);
+void faceb(t_obj *, int);
+void diags(t_obj *, int);
 int my_getnbr(const char *);
 int my_strlen(char *);
 int my_strcmp(const char *, char *);
@@ -92,5 +100,9 @@ char open_ini(t_param *, char **);
 char const_form_list(t_param *);
 char add_form_to_list(t_param *, char *);
 char check_scope(t_param *, char *);
+char generate_cube(t_param *);
+char init_cube_scope(t_param *);
+char create_list(t_form *);
+char add_vert_to_cube(t_form *);
 
 #endif

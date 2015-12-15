@@ -5,7 +5,7 @@
 ** Login   <brout_m@epitech.net>
 ** 
 ** Started on  Mon Dec 14 21:29:07 2015 marc brout
-** Last update Mon Dec 14 21:46:25 2015 marc brout
+** Last update Tue Dec 15 17:00:41 2015 marc brout
 */
 
 #include "fdf.h"
@@ -35,11 +35,13 @@ void		free_all(t_param *arg)
     {
       sav = tmp->next;
       free(tmp->name);
-      free_obj(tmp->objs);
+      if (tmp->objs != NULL)
+	free_obj(tmp->objs);
       free(tmp);
       tmp = sav;
     }
   free(tmp->name);
-  free_obj(tmp->objs);
+  if (tmp->objs != NULL)
+    free_obj(tmp->objs);
   free(tmp);
 }

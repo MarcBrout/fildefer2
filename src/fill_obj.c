@@ -5,7 +5,7 @@
 ** Login   <brout_m@epitech.net>
 ** 
 ** Started on  Mon Dec 14 12:03:47 2015 marc brout
-** Last update Mon Dec 14 22:11:05 2015 marc brout
+** Last update Tue Dec 15 17:08:17 2015 marc brout
 */
 
 #include "fdf.h"
@@ -49,7 +49,7 @@ void		put_color(t_param *arg, t_form *scp, t_color *col, int i)
   if (scp->color)
     col->full = my_getnbr(FLD(arg->ini, scp->name, DATA, i));
   else
-    col->full = WHITE;
+    col->full = DEFAULT_COL;
 }
 
 char		fill_this_scope(t_param *arg, t_form *scope)

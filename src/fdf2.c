@@ -5,7 +5,7 @@
 ** Login   <brout_m@epitech.net>
 ** 
 ** Started on  Fri Dec 11 13:44:58 2015 marc brout
-** Last update Mon Dec 14 22:30:37 2015 marc brout
+** Last update Tue Dec 15 16:38:40 2015 marc brout
 */
 
 #include "fdf.h"
@@ -65,6 +65,8 @@ char		launch_fdf(char **av)
   if (const_form_list(&arg))
     return (1);
   if (fill_objs(&arg))
+    return (1);
+  if (generate_cube(&arg))
     return (1);
   if (aff_fdf(&arg))
     return (1);
