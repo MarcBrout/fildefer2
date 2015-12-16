@@ -5,7 +5,7 @@
 ** Login   <brout_m@epitech.net>
 ** 
 ** Started on  Mon Dec 14 18:18:02 2015 marc brout
-** Last update Mon Dec 14 21:51:19 2015 marc brout
+** Last update Wed Dec 16 21:49:25 2015 marc brout
 */
 
 #include "fdf.h"
@@ -14,12 +14,17 @@ t_bunny_response	my_keys(t_bunny_event_state state,
 				t_bunny_keysym keysym,
 				void *data)
 {
-  if (keysym == BKS_ESCAPE)
-    if (state == GO_DOWN)
-      {
-	(void)data;
-	return (EXIT_ON_SUCCESS);
-      }
+  t_param		*arg;
+  int			i;
+
+  i = -1;
+  arg = data;
+  if (state == GO_DOWN)
+    {
+      while (++i < 8 && keysym != arg->keytab[i]);
+      if (i < 8)
+	return (arg->keyfunc[i](arg));
+    }
   return (GO_ON);
 }
 
@@ -33,7 +38,8 @@ t_bunny_response	main_loop(void *data)
   tmp = arg->form;
   while (tmp != NULL)
     {
-      tmp->func(tmp, arg->pix);
+      if (tmp->aff)
+	tmp->func(tmp, arg->pix);
       tmp = tmp->next;
     }
   bunny_blit(&arg->win->buffer, &arg->pix->clipable, NULL);
@@ -57,9 +63,15 @@ void		background(t_param *arg)
 char		aff_fdf(t_param *arg)
 {
   arg->key = &my_keys;
+  arg->cur = arg->form;
+  arg->cur->aff = 1;;
   if ((arg->pix = bunny_new_pixelarray(WIDTH, HEIGHT)) == NULL)
     return (1);
   if ((arg->win = bunny_start(WIDTH, HEIGHT, 0, "Fil de fer 2")) == NULL)
+    return (1);
+  if (init_keytab(arg))
+    return (1);
+  if (set_keyfunc(arg))
     return (1);
   bunny_set_loop_main_function(main_loop);
   bunny_set_key_response(arg->key);

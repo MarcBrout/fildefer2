@@ -5,7 +5,7 @@
 ** Login   <brout_m@epitech.net>
 ** 
 ** Started on  Fri Dec 11 13:21:09 2015 marc brout
-** Last update Tue Dec 15 19:13:07 2015 marc brout
+** Last update Wed Dec 16 21:47:01 2015 marc brout
 */
 
 #ifndef FDF_H_
@@ -45,6 +45,9 @@ typedef struct		s_form
   char			shape;
   char			color;
   char			aff;
+  int			x;
+  int			y;
+  float			zoom;
   void			(*func)(struct s_form *, t_bunny_pixelarray *);
   char			*name;
   t_obj			*objs;
@@ -54,6 +57,9 @@ typedef struct		s_form
 typedef struct		s_param
 {
   t_form		*form;
+  t_form		*cur;
+  t_bunny_keysym	*keytab;
+  t_bunny_response	(**keyfunc)(struct s_param *);
   t_bunny_ini		*ini;
   t_bunny_window	*win;
   t_bunny_pixelarray	*pix;
@@ -62,8 +68,17 @@ typedef struct		s_param
 
 t_bunny_response my_keys(t_bunny_event_state, t_bunny_keysym, void *);
 t_bunny_response main_loop(void *);
+t_bunny_response key_escape(t_param *);
+t_bunny_response key_a(t_param *);
+t_bunny_response key_left(t_param *);
+t_bunny_response key_right(t_param *);
+t_bunny_response key_up(t_param *);
+t_bunny_response key_down(t_param *);
+t_bunny_response key_p(t_param *);
+t_bunny_response key_m(t_param *);
 void free_obj(t_obj *);
 void free_all(t_param *);
+void add_pos(t_bunny_position *, t_form *);
 void set_pos(t_bunny_position *, t_dot *, t_dot *, t_color *);
 void pos_pixel(t_form *, t_bunny_pixelarray *);
 void pos_line(t_form *, t_bunny_pixelarray *);
@@ -83,6 +98,8 @@ void diags(t_obj *, int);
 int my_getnbr(const char *);
 int my_strlen(char *);
 int my_strcmp(const char *, char *);
+char init_keytab(t_param *);
+char set_keyfunc(t_param *);
 char *my_strdup(char *);
 char aff_fdf(t_param *);
 char check_trio(t_param *, t_form *, int);

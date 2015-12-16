@@ -5,7 +5,7 @@
 ** Login   <brout_m@epitech.net>
 ** 
 ** Started on  Fri Dec 11 13:44:58 2015 marc brout
-** Last update Tue Dec 15 17:36:06 2015 marc brout
+** Last update Wed Dec 16 18:07:38 2015 marc brout
 */
 
 #include "fdf.h"
@@ -21,7 +21,10 @@ char		add_form_to_list(t_param *arg, char *name)
       elem->name = my_strdup(name);
       elem->color = ((FLD(arg->ini, name, COLOR, 0) == NULL) ? 0 : 1);
       elem->objs = NULL;
-      elem->aff = 1;
+      elem->aff = 0;
+      elem->x = 0;
+      elem->y = 0;
+      elem->zoom = 1;
       elem->shape = ret_shape(arg, name);
       elem->next = arg->form;
       arg->form = elem;

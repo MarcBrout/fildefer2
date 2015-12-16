@@ -5,7 +5,7 @@
 ** Login   <brout_m@epitech.net>
 ** 
 ** Started on  Tue Dec 15 13:50:24 2015 marc brout
-** Last update Tue Dec 15 17:22:41 2015 marc brout
+** Last update Wed Dec 16 18:08:03 2015 marc brout
 */
 
 #include "fdf.h"
@@ -52,7 +52,10 @@ char		init_cube_scope(t_param *arg)
     return (1);
   cube->shape = 2;
   cube->color = 0;
-  cube->aff = 1;
+  cube->aff = 0;
+  cube->x = 0;
+  cube->y = 0;
+  cube->zoom = 1;
   cube->func = &pos_line;
   cube->name = my_strdup("cube");
   cube->objs = NULL;
