@@ -1,11 +1,11 @@
 ##
-## Makefile for bistro in /home/bougon_p/rendu/Piscine_C_bistromathique
+## Makefile for fdf2 in /home/brout_m/rendu/projet/Infographie/gfx_fdf2
 ## 
-## Made by Pierre Bougon
-## Login   <bougon_p@epitech.net>
+## Made by marc brout
+## Login   <brout_m@epitech.net>
 ## 
-## Started on  Thu Oct 29 14:45:48 2015 Pierre Bougon
-## Last update Wed Dec 16 21:54:29 2015 marc brout
+## Started on  Thu Dec 17 14:00:22 2015 marc brout
+## Last update Thu Dec 17 14:00:24 2015 marc brout
 ##
 
 SRCP	= ./src/
