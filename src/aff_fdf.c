@@ -5,7 +5,7 @@
 ** Login   <brout_m@epitech.net>
 ** 
 ** Started on  Mon Dec 14 18:18:02 2015 marc brout
-** Last update Wed Dec 16 21:49:25 2015 marc brout
+** Last update Thu Dec 17 13:30:25 2015 marc brout
 */
 
 #include "fdf.h"
@@ -64,7 +64,7 @@ char		aff_fdf(t_param *arg)
 {
   arg->key = &my_keys;
   arg->cur = arg->form;
-  arg->cur->aff = 1;;
+  arg->cur->aff = 1;
   if ((arg->pix = bunny_new_pixelarray(WIDTH, HEIGHT)) == NULL)
     return (1);
   if ((arg->win = bunny_start(WIDTH, HEIGHT, 0, "Fil de fer 2")) == NULL)

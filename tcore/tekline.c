@@ -5,7 +5,7 @@
 ** Login   <brout_m@epitech.net>
 ** 
 ** Started on  Tue Nov 17 16:29:29 2015 marc brout
-** Last update Thu Dec 17 10:57:14 2015 marc brout
+** Last update Thu Dec 17 11:10:29 2015 marc brout
 */
 
 #include "fdf.h"
@@ -15,7 +15,7 @@ void	tekline(t_bunny_pixelarray *pix,
 		t_color	*color)
 {
   float	a;
-  int	b;
+  float	b;
   int	c;
 
   a = (float)(pos[1].y - pos[0].y) / (float)(pos[1].x - pos[0].x);
@@ -25,15 +25,16 @@ void	tekline(t_bunny_pixelarray *pix,
       tekpixel(pix, pos, &color[0]);
       pos[0].x += ((pos[0].x > pos[1].x) ? -1 : 1);
       c = a * pos[0].x + b;
-      while (pos[0].y != c && pos[0].y != pos[1].y)
+      while (pos[0].y != c)
 	{
+	  pos[0].y += (pos[0].y == c) ? 0 : ((pos[0].y < c) ? 1 : -1);
 	  tekpixel(pix, pos, &color[0]);
-	  pos[0].y += (pos[0].y > c) ? -1 : 1;
 	}
     }
   while (pos[0].y != pos[1].y && pos[0].x == pos[1].x)
     {
       tekpixel(pix, pos, &color[0]);
-      pos[0].y += (pos[0].y > pos[1].y) ? -1 : 1;
+      pos[0].y += ((pos[0].y == pos[1].y) ? 0 :
+		   ((pos[0].y < pos[1].y) ? 1 : -1));
     }
 }
