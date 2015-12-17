@@ -5,7 +5,7 @@
 ** Login   <brout_m@epitech.net>
 ** 
 ** Started on  Wed Dec 16 18:55:56 2015 marc brout
-** Last update Wed Dec 16 21:51:27 2015 marc brout
+** Last update Thu Dec 17 10:54:59 2015 marc brout
 */
 
 #include "fdf.h"
@@ -62,6 +62,6 @@ t_bunny_response	key_a(t_param *arg)
 
 t_bunny_response	key_left(t_param *arg)
 {
-  arg->cur->x -= 5;
+  arg->cur->x -= 10;
   return (GO_ON);
 }

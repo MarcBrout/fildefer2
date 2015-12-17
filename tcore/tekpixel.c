@@ -5,10 +5,10 @@
 ** Login   <brout_m@epitech.net>
 ** 
 ** Started on  Tue Nov 17 16:24:48 2015 marc brout
-** Last update Sat Nov 21 18:18:13 2015 marc brout
+** Last update Thu Dec 17 10:56:49 2015 marc brout
 */
 
-#include "../include/lapin.h"
+#include "lapin.h"
 
 void		tekpixel(t_bunny_pixelarray	*pix,
 			 t_bunny_position	*pos,

@@ -5,7 +5,7 @@
 ** Login   <brout_m@epitech.net>
 ** 
 ** Started on  Mon Dec 14 21:23:50 2015 marc brout
-** Last update Wed Dec 16 18:36:52 2015 marc brout
+** Last update Thu Dec 17 11:01:34 2015 marc brout
 */
 
 #include "fdf.h"
@@ -23,7 +23,7 @@ void			pos_pixel(t_form *form, t_bunny_pixelarray *pix)
       pos.x += form->x;
       pos.y += form->y;
       pos.x *= form->zoom;
-      pos.y *= form->zoom;      
+      pos.y *= form->zoom;
       tekpixel(pix, &pos, &tmp->a.col);
       tmp = tmp->next;
     }

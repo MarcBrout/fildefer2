@@ -5,13 +5,13 @@
 ** Login   <brout_m@epitech.net>
 ** 
 ** Started on  Fri Dec 11 13:21:09 2015 marc brout
-** Last update Wed Dec 16 21:47:01 2015 marc brout
+** Last update Thu Dec 17 10:51:58 2015 marc brout
 */
 
 #ifndef FDF_H_
 # define FDF_H_
-# define HEIGHT 768
-# define WIDTH 1024
+# define HEIGHT 1024
+# define WIDTH 1280
 # define TYPE "fdf2"
 # define DATA "data"
 # define COLOR "color"

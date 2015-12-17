@@ -5,26 +5,26 @@
 ** Login   <brout_m@epitech.net>
 ** 
 ** Started on  Wed Dec 16 21:50:47 2015 marc brout
-** Last update Wed Dec 16 21:51:24 2015 marc brout
+** Last update Thu Dec 17 10:54:46 2015 marc brout
 */
 
 #include "fdf.h"
 
 t_bunny_response	key_right(t_param *arg)
 {
-  arg->cur->x += 5;
+  arg->cur->x += 10;
   return (GO_ON);
 }
 
 t_bunny_response	key_up(t_param *arg)
 {
-  arg->cur->y -= 5;
+  arg->cur->y -= 10;
   return (GO_ON);
 }
 
 t_bunny_response	key_down(t_param *arg)
 {
-  arg->cur->y += 5;
+  arg->cur->y += 10;
   return (GO_ON);
 }
 
