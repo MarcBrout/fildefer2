@@ -5,7 +5,7 @@
 ** Login   <brout_m@epitech.net>
 ** 
 ** Started on  Tue Dec 15 13:50:24 2015 marc brout
-** Last update Wed Dec 16 18:08:03 2015 marc brout
+** Last update Sun Dec 20 16:35:56 2015 marc brout
 */
 
 #include "fdf.h"
@@ -14,7 +14,7 @@ char		add_vert_to_cube(t_form *cube)
 {
   t_obj		*vertice;
 
-  if ((vertice = malloc(sizeof(t_obj))) == NULL)
+  if ((vertice = bunny_malloc(sizeof(t_obj))) == NULL)
     return (1);
   vertice->next = cube->objs;
   cube->objs = vertice;
@@ -48,7 +48,7 @@ char		init_cube_scope(t_param *arg)
 {
   t_form	*cube;
 
-  if ((cube = malloc(sizeof(t_form))) == NULL)
+  if ((cube = bunny_malloc(sizeof(t_form))) == NULL)
     return (1);
   cube->shape = 2;
   cube->color = 0;

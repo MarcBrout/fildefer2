@@ -5,7 +5,7 @@
 ** Login   <brout_m@epitech.net>
 ** 
 ** Started on  Wed Dec 16 18:55:56 2015 marc brout
-** Last update Thu Dec 17 10:54:59 2015 marc brout
+** Last update Sun Dec 20 16:36:17 2015 marc brout
 */
 
 #include "fdf.h"
@@ -14,7 +14,7 @@ char			init_keytab(t_param *arg)
 {
   t_bunny_keysym	*keytab;
 
-  if ((keytab = malloc(sizeof(t_bunny_keysym) * 9)) == NULL)
+  if ((keytab = bunny_malloc(sizeof(t_bunny_keysym) * 9)) == NULL)
     return (1);
   keytab[0] = BKS_ESCAPE;
   keytab[1] = BKS_A;
@@ -32,7 +32,7 @@ char			set_keyfunc(t_param *arg)
 {
   t_bunny_response	(**keyfunc)(t_param *);
 
-  if ((keyfunc = malloc(sizeof(t_bunny_response *)* 9)) == NULL)
+  if ((keyfunc = bunny_malloc(sizeof(t_bunny_response *)* 9)) == NULL)
     return (1);
   keyfunc[0] = &key_escape;
   keyfunc[1] = &key_a;

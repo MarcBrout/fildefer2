@@ -5,7 +5,7 @@
 ** Login   <brout_m@epitech.net>
 ** 
 ** Started on  Fri Dec 11 13:44:58 2015 marc brout
-** Last update Wed Dec 16 18:07:38 2015 marc brout
+** Last update Sun Dec 20 16:36:51 2015 marc brout
 */
 
 #include "fdf.h"
@@ -16,7 +16,7 @@ char		add_form_to_list(t_param *arg, char *name)
 
   if (check_scope(arg, name))
     {
-      if ((elem = malloc(sizeof(t_form))) == NULL)
+      if ((elem = bunny_malloc(sizeof(t_form))) == NULL)
 	return (1);
       elem->name = my_strdup(name);
       elem->color = ((FLD(arg->ini, name, COLOR, 0) == NULL) ? 0 : 1);

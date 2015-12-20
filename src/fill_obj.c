@@ -5,7 +5,7 @@
 ** Login   <brout_m@epitech.net>
 ** 
 ** Started on  Mon Dec 14 12:03:47 2015 marc brout
-** Last update Tue Dec 15 17:08:17 2015 marc brout
+** Last update Sun Dec 20 16:36:27 2015 marc brout
 */
 
 #include "fdf.h"
@@ -26,7 +26,7 @@ char		add_obj_to_list(t_form *scope)
 {
   t_obj		*elem;
 
-  if ((elem = malloc(sizeof(t_obj))) == NULL)
+  if ((elem = bunny_malloc(sizeof(t_obj))) == NULL)
     return (1);
   elem->next = scope->objs;
   scope->objs = elem;
